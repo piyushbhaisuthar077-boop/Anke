@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anke - Modern Accounting & Tax Cloud Software</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Canvas Confetti for Celebration Effects -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            maroon: {
+              50: '#FDF2F4',
+              100: '#FBE8EC',
+              700: '#7A0C24',
+              800: '#5B0E2D',
+              900: '#4A0518',
+              950: '#30020E',
+            },
+            gold: {
+              400: '#F3C644',
+              500: '#D4AF37',
+              600: '#B8860B',
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Indian Cultural Rangoli & Ledger Dot Matrix Background */
+    .rangoli-dot-bg {
+      background-color: #FFFFFF;
+      background-image: 
+        radial-gradient(#5B0E2D 0.75px, transparent 0.75px),
+        radial-gradient(#D4AF37 0.75px, #FFFFFF 0.75px);
+      background-size: 32px 32px;
+      background-position: 0 0, 16px 16px;
+      opacity: 0.98;
+    }
+
+    .maroon-gradient {
+      background: linear-gradient(135deg, #5B0E2D 0%, #4A0518 50%, #30020E 100%);
+    }
+
+    .gold-border {
+      border: 1px solid rgba(212, 175, 55, 0.35);
+    }
+
+    .gold-glow {
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+    }
+    
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="font-sans text-gray-800 antialiased rangoli-dot-bg overflow-x-hidden">
+
+  <!-- ================= 1. TOP ANNOUNCEMENT BAR ================= -->
+  <div class="maroon-gradient text-white text-xs sm:text-sm py-2 px-4 text-center border-b border-gold-500/40 relative z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-2 flex-wrap font-medium">
+      <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-gold-500 text-maroon-950 uppercase tracking-wider animate-pulse">
+        Special Launch Offer
+      </span>
+      <span>Regular Fee <span class="line-through opacity-75">₹14,999/year</span> is <strong>100% FREE for 1 Full Year</strong> for businesses registering this week!</span>
+      <a href="#pricing" class="underline hover:text-gold-400 font-bold ml-1 transition">Claim ₹0 Access →</a>
+    </div>
+  </div>
+
+  <!-- ================= 2. STICKY HEADER ================= -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-maroon-100 shadow-sm transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo: Anke -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl maroon-gradient flex items-center justify-center text-white font-display font-extrabold text-2xl shadow-md group-hover:scale-105 transition-transform gold-border">
+          <span class="text-gold-400">A</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-extrabold text-2xl tracking-tight text-maroon-900 leading-none">Anke</span>
+          <span class="text-[10px] font-semibold tracking-wider text-gray-500 uppercase mt-1">Cloud Accounting OS</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Navigation -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-700">
+        <a href="#features" class="hover:text-maroon-900 transition">Features</a>
+        <a href="#desi-nama" class="hover:text-maroon-900 transition">Desi Nama & Rojmel</a>
+        <a href="#interactive-invoice" class="hover:text-maroon-900 transition text-maroon-800 flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span> Live Invoice Tool
+        </a>
+        <a href="#calculator" class="hover:text-maroon-900 transition">ROI Calculator</a>
+        <a href="#comparison" class="hover:text-maroon-900 transition">Why Anke?</a>
+        <a href="#pricing" class="hover:text-maroon-900 transition">Pricing</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3">
+        <!-- Direct WhatsApp Chat -->
+        <a href="https://wa.me/919104253142?text=Hello%20Anke%20Team,%20I%20want%20to%20activate%20my%201-Year%20Free%20Access." 
+           target="_blank" 
+           class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-300 hover:bg-emerald-100 transition shadow-sm">
+          <svg class="w-4 h-4 fill-emerald-600" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.155.57 4.175 1.564 5.923l-1.564 5.905 6.064-1.59c1.691.929 3.633 1.462 5.702 1.462 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
+          WhatsApp Support
+        </a>
+        
+        <button onclick="triggerConfetti()" class="px-5 py-2.5 rounded-xl font-bold text-sm text-white maroon-gradient hover:opacity-95 shadow-md shadow-maroon-900/20 gold-border transition transform active:scale-95">
+          Try Anke Free
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ================= 3. HERO SECTION ================= -->
+  <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Copy & Value Proposition -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-maroon-50 border border-maroon-200 text-maroon-900 text-xs font-bold tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-gold-500"></span>
+            WORLD-CLASS ENTERPRISE ACCOUNTING CLOUD
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-maroon-950 tracking-tight leading-[1.12]">
+            The Smart Accounting OS Built for 
+            <span id="wordRotator" class="text-transparent bg-clip-text bg-gradient-to-r from-maroon-800 via-maroon-900 to-gold-600 border-b-4 border-gold-500 transition-all duration-300">
+              Zero-Knowledge
+            </span>
+            Simplicity.
+          </h1>
+
+          <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+            Whether you run a local retail shop, factory, or multi-branch enterprise—experience effortless 
+            <strong>Desi Nama, Daily Rojmel, GST E-Invoicing & Automated Tax Reconciliation</strong>. No accounting degree needed.
+          </p>
+
+          <!-- Badges / Micro value -->
+          <div class="flex items-center justify-center lg:justify-start gap-4 text-xs font-semibold text-gray-500 pt-1">
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              2-Minute Setup
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              No Credit Card Required
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              100% Free For 1 Year
+            </span>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-3">
+            <button onclick="triggerConfetti()" class="w-full sm:w-auto px-8 py-4 rounded-xl font-display font-bold text-base text-white maroon-gradient shadow-xl shadow-maroon-900/30 gold-border hover:brightness-110 transition transform active:scale-95 flex items-center justify-center gap-2">
+              <span>Try Anke Free Now</span>
+              <span class="bg-gold-500 text-maroon-950 text-xs px-2 py-0.5 rounded font-black">₹0</span>
+            </button>
+
+            <a href="#interactive-invoice" class="w-full sm:w-auto px-6 py-4 rounded-xl font-bold text-sm text-maroon-900 bg-white border-2 border-maroon-800/20 hover:bg-maroon-50 transition shadow-sm flex items-center justify-center gap-2">
+              <svg class="w-4 h-4 text-maroon-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <span>Test Free Bill Generator</span>
+            </a>
+          </div>
+
+          <!-- Phone call direct support -->
+          <div class="text-xs text-gray-500 pt-2 flex items-center justify-center lg:justify-start gap-2">
+            <span>Direct Merchant Helpline:</span>
+            <a href="tel:9104253142" class="font-bold text-maroon-900 hover:underline">+91 9104253142</a>
+          </div>
+
+        </div>
+
+        <!-- Right Column: 3D-Style Enterprise Dashboard Mockup -->
+        <div class="lg:col-span-5 relative">
+          
+          <div class="relative mx-auto max-w-md lg:max-w-none rounded-2xl bg-white p-3 shadow-2xl border-2 border-maroon-900/10 gold-glow">
+            
+            <!-- Window Bar -->
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-gray-100">
+              <div class="flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-rose-400 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-400 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-400 inline-block"></span>
+              </div>
+              <div class="text-[11px] font-mono font-semibold text-gray-400 bg-gray-50 px-2 py-0.5 rounded border">
+                anke.cloud/live-dashboard
+              </div>
+              <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                LIVE SYNC
+              </span>
+            </div>
+
+            <!-- Mini Dashboard Interior Mockup -->
+            <div class="space-y-4">
+              
+              <!-- Quick Stats Grid -->
+              <div class="grid grid-cols-2 gap-2">
+                <div class="p-3 rounded-xl bg-maroon-50/70 border border-maroon-100">
+                  <div class="text-[10px] font-bold uppercase tracking-wider text-maroon-800">Today's Rojmel (Cash)</div>
+                  <div class="text-lg font-extrabold text-maroon-950 mt-1">₹84,250.00</div>
+                  <div class="text-[10px] text-emerald-600 font-semibold">▲ +18.4% vs yesterday</div>
+                </div>
+                <div class="p-3 rounded-xl bg-gold-400/10 border border-gold-500/20">
+                  <div class="text-[10px] font-bold uppercase tracking-wider text-gold-600">Pending Receivables</div>
+                  <div class="text-lg font-extrabold text-gray-900 mt-1">₹1,42,800.00</div>
+                  <div class="text-[10px] text-maroon-700 font-semibold">4 Auto WhatsApp Sent</div>
+                </div>
+              </div>
+
+              <!-- Live Graph Simulator -->
+              <div class="p-3.5 rounded-xl border border-gray-100 bg-gradient-to-b from-white to-gray-50">
+                <div class="flex items-center justify-between text-xs font-bold text-gray-700 mb-2">
+                  <span>Revenue & Tax Trajectory</span>
+                  <span class="text-maroon-800 font-mono text-[11px]">FY 2026-27</span>
+                </div>
+                <!-- Simulated Bars -->
+                <div class="h-20 flex items-end gap-2 pt-2">
+                  <div class="flex-1 bg-maroon-200 rounded-t h-8"></div>
+                  <div class="flex-1 bg-maroon-300 rounded-t h-12"></div>
+                  <div class="flex-1 bg-maroon-500 rounded-t h-10"></div>
+                  <div class="flex-1 bg-maroon-700 rounded-t h-16"></div>
+                  <div class="flex-1 bg-maroon-900 rounded-t h-20 relative">
+                    <span class="absolute -top-5 left-1/2 -translate-x-1/2 text-[9px] font-bold text-gold-600">HIGH</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Recent Desi Nama Ledger Stream -->
+              <div class="border border-gray-100 rounded-xl p-3">
+                <div class="text-[11px] font-bold text-gray-700 uppercase tracking-wider mb-2 flex justify-between">
+                  <span>Digital Rojmel Stream</span>
+                  <span class="text-emerald-600">Verified</span>
+                </div>
+                <div class="space-y-1.5 text-xs">
+                  <div class="flex justify-between py-1 border-b border-gray-50">
+                    <span class="font-medium text-gray-800">Shreeji Traders (Rajkot)</span>
+                    <span class="font-bold text-emerald-700">+₹24,500 Cr</span>
+                  </div>
+                  <div class="flex justify-between py-1 border-b border-gray-50">
+                    <span class="font-medium text-gray-800">GST E-Way Bill #4928</span>
+                    <span class="font-bold text-maroon-900">₹1,18,000</span>
+                  </div>
+                  <div class="flex justify-between py-1">
+                    <span class="font-medium text-gray-800">Office Maintenance</span>
+                    <span class="font-bold text-rose-600">-₹2,400 Dr</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Floating Trust Badge -->
+            <div class="absolute -bottom-5 -left-4 bg-maroon-900 text-white px-4 py-2 rounded-xl shadow-xl flex items-center gap-3 border border-gold-500">
+              <div class="w-8 h-8 rounded-full bg-gold-500 text-maroon-950 font-black flex items-center justify-center text-sm">
+                ★
+              </div>
+              <div>
+                <div class="text-xs font-bold leading-tight">ISO 27001 Certified</div>
+                <div class="text-[10px] text-gold-300">Bank-Grade 256-Bit SSL</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 4. REAL-TIME STATS COUNTER ================= -->
+  <section class="py-12 bg-maroon-950 text-white border-y-2 border-gold-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        
+        <div>
+          <div class="text-3xl sm:text-4xl font-display font-extrabold text-gold-400">
+            ₹<span class="counter" data-target="850">0</span> Cr+
+          </div>
+          <div class="text-xs sm:text-sm text-gray-300 font-medium mt-1">Invoices Processed</div>
+        </div>
+
+        <div>
+          <div class="text-3xl sm:text-4xl font-display font-extrabold text-gold-400">
+            <span class="counter" data-target="45000">0</span>+
+          </div>
+          <div class="text-xs sm:text-sm text-gray-300 font-medium mt-1">Active Indian Businesses</div>
+        </div>
+
+        <div>
+          <div class="text-3xl sm:text-4xl font-display font-extrabold text-gold-400">
+            <span class="counter" data-target="99">0</span>.99%
+          </div>
+          <div class="text-xs sm:text-sm text-gray-300 font-medium mt-1">GSTR Reconciliation Accuracy</div>
+        </div>
+
+        <div>
+          <div class="text-3xl sm:text-4xl font-display font-extrabold text-gold-400">
+            <span class="counter" data-target="350">0</span>+
+          </div>
+          <div class="text-xs sm:text-sm text-gray-300 font-medium mt-1">Hours Saved Per Merchant/Yr</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 5. INTERACTIVE LIVE INVOICE MAKER ================= -->
+  <section id="interactive-invoice" class="py-20 bg-white border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-wider text-maroon-800 bg-maroon-50 px-3 py-1 rounded-full border border-maroon-200">
+          Try It Right Here Without Signing Up
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-maroon-950 mt-3">
+          Generate a Real GST Invoice in 10 Seconds
+        </h2>
+        <p class="text-gray-600 mt-2 text-sm sm:text-base">
+          Experience how Anke eliminates calculation errors and lets you send bills straight to your client's WhatsApp.
+        </p>
+      </div>
+
+      <!-- Live Tool Card -->
+      <div class="bg-gray-50 border-2 border-maroon-900/10 rounded-2xl p-6 sm:p-8 shadow-xl gold-border relative">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div>
+            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Customer / Party Name</label>
+            <input type="text" id="invParty" value="Mahalaxmi Enterprise" class="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-lg text-sm font-semibold focus:outline-none focus:border-maroon-800" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Item / Product</label>
+            <input type="text" id="invItem" value="Commercial Cotton Bales" class="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-lg text-sm font-semibold focus:outline-none focus:border-maroon-800" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Base Amount (₹)</label>
+            <input type="number" id="invAmount" value="25000" oninput="calculateInvoice()" class="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-lg text-sm font-semibold focus:outline-none focus:border-maroon-800" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-gray-200">
+          <div>
+            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">GST Tax Rate</label>
+            <select id="invTax" onchange="calculateInvoice()" class="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-lg text-sm font-semibold focus:outline-none focus:border-maroon-800">
+              <option value="0.05">5% (Essential Goods)</option>
+              <option value="0.12">12% (Standard)</option>
+              <option value="0.18" selected>18% (Services & General Goods)</option>
+              <option value="0.28">28% (Luxury)</option>
+            </select>
+          </div>
+
+          <div class="bg-maroon-900 text-white rounded-xl p-4 flex items-center justify-between border border-gold-500">
+            <div>
+              <div class="text-xs text-gold-300 font-medium">Auto-Calculated Total (Incl. GST)</div>
+              <div id="invTotalDisplay" class="text-2xl font-display font-extrabold text-white">₹29,500.00</div>
+              <div id="invTaxBreakdown" class="text-[10px] text-gray-300">CGST (9%): ₹2,250 | SGST (9%): ₹2,250</div>
+            </div>
+            <button onclick="simulateSendInvoice()" class="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg text-xs font-bold transition flex items-center gap-1.5 shadow">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.155.57 4.175 1.564 5.923l-1.564 5.905 6.064-1.59c1.691.929 3.633 1.462 5.702 1.462 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
+              <span>Send Demo Bill</span>
+            </button>
+          </div>
+        </div>
+
+        <div id="invoiceSuccessAlert" class="hidden mt-4 p-3 bg-emerald-50 border border-emerald-300 rounded-lg text-emerald-800 text-xs font-semibold text-center animate-bounce">
+          🎉 Invoice created and dispatched via Anke Cloud WhatsApp Gateway with zero latency!
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 6. BENTO GRID: ENTERPRISE FEATURES ================= -->
+  <section id="features" class="py-20 bg-gray-50/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-maroon-800 bg-maroon-50 px-3.5 py-1.5 rounded-full border border-maroon-200">
+          Core Capabilities
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-maroon-950 mt-3">
+          Engineered for Accuracy. Styled in Gold & Maroon.
+        </h2>
+        <p class="text-gray-600 mt-3 text-base">
+          From traditional Gujarati bahi-khata to automatic multi-state GST tax reconciliation.
+        </p>
+      </div>
+
+      <!-- Bento Grid (Gold with Dark Maroon Styling) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Bento 1: Desi Nama & Rojmel (Big Span) -->
+        <div id="desi-nama" class="md:col-span-2 bg-white rounded-2xl p-8 border-2 border-maroon-900/10 hover:border-gold-500 transition-all duration-300 shadow-md group relative overflow-hidden">
+          <div class="w-12 h-12 rounded-xl maroon-gradient text-gold-400 font-bold flex items-center justify-center mb-5 text-xl gold-border shadow">
+            📖
+          </div>
+          <h3 class="text-2xl font-display font-bold text-maroon-950 mb-3">
+            Desi Nama Paddhati & Digital Rojmel
+          </h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-6">
+            Keep your traditional daily cash book (Rojmel), Khatavahi, and Hawala entries alive without confusion. Anke automatically translates traditional entries into double-entry compliance in the background.
+          </p>
+          <div class="bg-maroon-50/60 rounded-xl p-4 border border-maroon-100 font-mono text-xs text-maroon-900 grid grid-cols-2 gap-4">
+            <div>
+              <span class="font-bold text-emerald-700">● Jama (Credit)</span>
+              <div class="mt-1 text-gray-600">Shree Ganeshay Namah Opening Balance: ₹50,000</div>
+            </div>
+            <div>
+              <span class="font-bold text-rose-700">● Udhar (Debit)</span>
+              <div class="mt-1 text-gray-600">Goods Purchased via APMC Market: ₹12,300</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento 2: 1-Click Tally & Excel Import -->
+        <div class="bg-white rounded-2xl p-8 border-2 border-maroon-900/10 hover:border-gold-500 transition-all duration-300 shadow-md">
+          <div class="w-12 h-12 rounded-xl maroon-gradient text-gold-400 font-bold flex items-center justify-center mb-5 text-xl gold-border shadow">
+            ⚡
+          </div>
+          <h3 class="text-xl font-display font-bold text-maroon-950 mb-2">
+            1-Click Tally & Excel Migration
+          </h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Switch in 60 seconds. Upload your existing Tally XML or Excel sheets; Anke structures your entire party master & inventory automatically.
+          </p>
+        </div>
+
+        <!-- Bento 3: WhatsApp Billing -->
+        <div class="bg-white rounded-2xl p-8 border-2 border-maroon-900/10 hover:border-gold-500 transition-all duration-300 shadow-md">
+          <div class="w-12 h-12 rounded-xl maroon-gradient text-gold-400 font-bold flex items-center justify-center mb-5 text-xl gold-border shadow">
+            💬
+          </div>
+          <h3 class="text-xl font-display font-bold text-maroon-950 mb-2">
+            Automated WhatsApp Billing
+          </h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Send GST invoices, payment reminders, and payment receipts with UPI payment links directly to your buyer's mobile instantly.
+          </p>
+        </div>
+
+        <!-- Bento 4: Live Inventory & Barcode -->
+        <div class="bg-white rounded-2xl p-8 border-2 border-maroon-900/10 hover:border-gold-500 transition-all duration-300 shadow-md">
+          <div class="w-12 h-12 rounded-xl maroon-gradient text-gold-400 font-bold flex items-center justify-center mb-5 text-xl gold-border shadow">
+            📦
+          </div>
+          <h3 class="text-xl font-display font-bold text-maroon-950 mb-2">
+            Stock & Inventory Watchdog
+          </h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Never run out of high-demand items. Real-time batch-wise expiry alerts, barcode generation, and multi-godown transfers.
+          </p>
+        </div>
+
+        <!-- Bento 5: Bank-Grade Security & Auto Backup -->
+        <div class="bg-white rounded-2xl p-8 border-2 border-maroon-900/10 hover:border-gold-500 transition-all duration-300 shadow-md">
+          <div class="w-12 h-12 rounded-xl maroon-gradient text-gold-400 font-bold flex items-center justify-center mb-5 text-xl gold-border shadow">
+            🔒
+          </div>
+          <h3 class="text-xl font-display font-bold text-maroon-950 mb-2">
+            256-Bit Cloud Encryption
+          </h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Your financial data is completely encrypted and automatically backed up every hour on secure tier-4 Indian cloud datacenters.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 7. INTERACTIVE ROI CALCULATOR ================= -->
+  <section id="calculator" class="py-20 bg-white border-y border-gray-100">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-maroon-950">
+          How Much Time & Money Will Anke Save You?
+        </h2>
+        <p class="text-gray-600 mt-2 text-sm sm:text-base">
+          Drag the sliders below to estimate your annual business operational savings.
+        </p>
+      </div>
+
+      <div class="bg-maroon-50/50 p-6 sm:p-10 rounded-2xl border-2 border-maroon-900/15 gold-glow">
+        <div class="space-y-6">
+          
+          <div>
+            <div class="flex justify-between text-sm font-bold text-gray-800 mb-2">
+              <span>Monthly Invoices Generated:</span>
+              <span id="invoiceSliderVal" class="text-maroon-900 font-extrabold">250 Bills</span>
+            </div>
+            <input type="range" id="invoiceSlider" min="20" max="2000" step="10" value="250" oninput="calculateROI()" class="w-full accent-maroon-900 cursor-pointer h-2 bg-gray-200 rounded-lg">
+          </div>
+
+          <div>
+            <div class="flex justify-between text-sm font-bold text-gray-800 mb-2">
+              <span>Hours Spent Per Week on Accounts & Invoicing:</span>
+              <span id="hoursSliderVal" class="text-maroon-900 font-extrabold">12 Hours</span>
+            </div>
+            <input type="range" id="hoursSlider" min="2" max="40" step="1" value="12" oninput="calculateROI()" class="w-full accent-maroon-900 cursor-pointer h-2 bg-gray-200 rounded-lg">
+          </div>
+
+        </div>
+
+        <div class="mt-8 pt-8 border-t border-maroon-200 grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
+          <div class="p-4 bg-white rounded-xl border border-maroon-100 shadow-sm">
+            <div class="text-xs text-gray-500 font-bold uppercase tracking-wider">Annual Time Saved</div>
+            <div id="annualHoursSaved" class="text-3xl font-display font-extrabold text-maroon-900 mt-1">480 Hours</div>
+            <div class="text-[11px] text-emerald-600 font-semibold mt-0.5">Equivalent to 60 Full Workdays</div>
+          </div>
+          <div class="p-4 bg-white rounded-xl border border-maroon-100 shadow-sm">
+            <div class="text-xs text-gray-500 font-bold uppercase tracking-wider">Estimated Annual Cost Savings</div>
+            <div id="annualMoneySaved" class="text-3xl font-display font-extrabold text-gold-600 mt-1">₹72,000</div>
+            <div class="text-[11px] text-emerald-600 font-semibold mt-0.5">Reduced CA penalty & staff overhead</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 8. US VS THEM COMPARISON ================= -->
+  <section id="comparison" class="py-20 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-maroon-950">
+          Why Modern Businesses Replace Old Tools with Anke
+        </h2>
+        <p class="text-gray-600 mt-2 text-sm sm:text-base">
+          A side-by-side comparison with traditional pen-paper Chopda and legacy software.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+          <thead class="maroon-gradient text-white text-xs sm:text-sm uppercase">
+            <tr>
+              <th class="py-4 px-6 font-bold">Key Capability</th>
+              <th class="py-4 px-6 font-bold text-center bg-maroon-950 text-gold-400 border-x border-gold-500/30">Anke Cloud OS</th>
+              <th class="py-4 px-6 font-bold text-center opacity-80">Manual Chopda / Bahi-Khata</th>
+              <th class="py-4 px-6 font-bold text-center opacity-80">Complex Offline Software</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100 text-sm font-medium text-gray-700">
+            <tr>
+              <td class="py-4 px-6 font-bold text-maroon-950">Zero-Accounting Skill Required</td>
+              <td class="py-4 px-6 text-center bg-gold-400/5 text-emerald-600 font-bold border-x border-gold-500/20">✔ Yes (2-Min Setup)</td>
+              <td class="py-4 px-6 text-center text-rose-500">❌ High Error Risk</td>
+              <td class="py-4 px-6 text-center text-rose-500">❌ Needs Dedicated Operator</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-maroon-950">Instant WhatsApp Invoice Delivery</td>
+              <td class="py-4 px-6 text-center bg-gold-400/5 text-emerald-600 font-bold border-x border-gold-500/20">✔ 1-Click Automated</td>
+              <td class="py-4 px-6 text-center text-rose-500">❌ Impossible</td>
+              <td class="py-4 px-6 text-center text-amber-600">▲ Third-party Addon Fee</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-maroon-950">Mobile & Computer Real-Time Sync</td>
+              <td class="py-4 px-6 text-center bg-gold-400/5 text-emerald-600 font-bold border-x border-gold-500/20">✔ Live Everywhere</td>
+              <td class="py-4 px-6 text-center text-rose-500">❌ Stays in Shop Drawer</td>
+              <td class="py-4 px-6 text-center text-rose-500">❌ Locked to Single PC</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-maroon-950">GSTR-1, 3B & E-Way Bill in 1-Click</td>
+              <td class="py-4 px-6 text-center bg-gold-400/5 text-emerald-600 font-bold border-x border-gold-500/20">✔ 100% Error-Free</td>
+              <td class="py-4 px-6 text-center text-rose-500">❌ Manual Calculation</td>
+              <td class="py-4 px-6 text-center text-amber-600">▲ Complex Export Required</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-maroon-950">1-Year Free Launch Pass</td>
+              <td class="py-4 px-6 text-center bg-gold-400/5 text-emerald-600 font-black text-base border-x border-gold-500/20">✔ ₹0 Free</td>
+              <td class="py-4 px-6 text-center text-gray-500">Paper Cost</td>
+              <td class="py-4 px-6 text-center text-rose-600 font-bold">₹18,000 - ₹25,000/yr</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 9. PRICING & 1-YEAR FREE LAUNCH WINDOW ================= -->
+  <section id="pricing" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-300">
+          Limited Launch Week Window
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-maroon-950 mt-3">
+          All Plans are 100% Free for 365 Days
+        </h2>
+        <p class="text-gray-600 mt-3 text-base">
+          Sign up today to lock in free access. No credit card required. No hidden fees.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- Starter Plan -->
+        <div class="rounded-2xl p-8 border-2 border-gray-200 bg-white flex flex-col justify-between hover:border-maroon-900 transition shadow-sm">
+          <div>
+            <div class="text-lg font-bold text-gray-800">Starter Tier</div>
+            <p class="text-xs text-gray-500 mt-1">Best for small retailers & individual shops.</p>
+            
+            <div class="mt-6 flex items-baseline gap-2">
+              <span class="text-4xl font-display font-extrabold text-maroon-950">₹0</span>
+              <span class="text-sm font-semibold text-gray-400 line-through">₹99/month</span>
+            </div>
+            <div class="text-xs font-bold text-emerald-600 mt-1">Free for 1 Year (Early Access)</div>
+
+            <ul class="mt-8 space-y-3 text-sm text-gray-600">
+              <li class="flex items-center gap-2">✔ Unlimited GST Invoices</li>
+              <li class="flex items-center gap-2">✔ Digital Daily Rojmel</li>
+              <li class="flex items-center gap-2">✔ WhatsApp Sharing</li>
+              <li class="flex items-center gap-2">✔ Single User License</li>
+            </ul>
+          </div>
+
+          <button onclick="triggerConfetti()" class="mt-8 w-full py-3 rounded-xl font-bold text-sm bg-gray-100 hover:bg-gray-200 text-maroon-900 transition">
+            Claim Free Starter
+          </button>
+        </div>
+
+        <!-- Gold / Enterprise Plan (Featured Hero) -->
+        <div class="rounded-2xl p-8 border-2 border-gold-500 maroon-gradient text-white flex flex-col justify-between shadow-2xl relative transform md:-translate-y-3">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gold-500 text-maroon-950 text-xs font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow">
+            MOST POPULAR • 100% WAIVED
+          </div>
+
+          <div>
+            <div class="text-lg font-bold text-gold-300">Gold Enterprise Suite</div>
+            <p class="text-xs text-gray-200 mt-1">For growing wholesalers, traders & factories.</p>
+            
+            <div class="mt-6 flex items-baseline gap-2">
+              <span class="text-5xl font-display font-extrabold text-white">₹0</span>
+              <span class="text-base font-semibold text-gray-300 line-through">₹14,999/year</span>
+            </div>
+            <div class="text-xs font-bold text-gold-400 mt-1">Free for Full 365 Days • Zero Catch</div>
+
+            <ul class="mt-8 space-y-3 text-sm text-gray-100">
+              <li class="flex items-center gap-2">✔ <strong>All Desi Nama & Rojmel Capabilities</strong></li>
+              <li class="flex items-center gap-2">✔ <strong>E-Way Bill & Automated GSTR-1 / 3B</strong></li>
+              <li class="flex items-center gap-2">✔ <strong>Direct Bank Reconciliation & UPI QR</strong></li>
+              <li class="flex items-center gap-2">✔ <strong>Multi-Staff Logins & CA Auditor Access</strong></li>
+              <li class="flex items-center gap-2">✔ <strong>Dedicated Priority Phone Support (9104253142)</strong></li>
+            </ul>
+          </div>
+
+          <button onclick="triggerConfetti()" class="mt-8 w-full py-4 rounded-xl font-display font-extrabold text-base bg-gold-500 hover:bg-gold-400 text-maroon-950 transition shadow-lg transform active:scale-95">
+            Activate Free 1-Year Gold Pass
+          </button>
+        </div>
+
+        <!-- Silver Plan -->
+        <div class="rounded-2xl p-8 border-2 border-gray-200 bg-white flex flex-col justify-between hover:border-maroon-900 transition shadow-sm">
+          <div>
+            <div class="text-lg font-bold text-gray-800">Silver Pro</div>
+            <p class="text-xs text-gray-500 mt-1">For multi-counter retail & distributors.</p>
+            
+            <div class="mt-6 flex items-baseline gap-2">
+              <span class="text-4xl font-display font-extrabold text-maroon-950">₹0</span>
+              <span class="text-sm font-semibold text-gray-400 line-through">₹199/month</span>
+            </div>
+            <div class="text-xs font-bold text-emerald-600 mt-1">Free for 1 Year (Early Access)</div>
+
+            <ul class="mt-8 space-y-3 text-sm text-gray-600">
+              <li class="flex items-center gap-2">✔ Everything in Starter</li>
+              <li class="flex items-center gap-2">✔ Inventory & Barcode Tracking</li>
+              <li class="flex items-center gap-2">✔ Up to 3 Staff Users</li>
+              <li class="flex items-center gap-2">✔ Automated Payment Reminders</li>
+            </ul>
+          </div>
+
+          <button onclick="triggerConfetti()" class="mt-8 w-full py-3 rounded-xl font-bold text-sm bg-gray-100 hover:bg-gray-200 text-maroon-900 transition">
+            Claim Free Silver
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Guarantee Footer Note -->
+      <div class="text-center mt-10 text-xs text-gray-500">
+        30-Day Transition Guarantee • Cancel anytime with 1-click • Export your ledger data anytime in Excel
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 10. REVIEWS & RATINGS ================= -->
+  <section class="py-16 bg-gray-50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <div class="flex items-center justify-center gap-1 text-gold-500 text-xl mb-1">
+          ★★★★★
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-maroon-950">
+          Trusted by Indian Business Owners & CAs
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+          <div class="flex text-gold-500 mb-2">★★★★★</div>
+          <p class="text-sm text-gray-600 italic">"I never studied accounting, but Anke makes daily Rojmel as simple as sending a WhatsApp message. All calculations are automatic."</p>
+          <div class="mt-4 pt-4 border-t border-gray-100">
+            <div class="font-bold text-sm text-maroon-950">Pravinbhai Patel</div>
+            <div class="text-xs text-gray-500">Wholesale Textile Trader, Surat</div>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+          <div class="flex text-gold-500 mb-2">★★★★★</div>
+          <p class="text-sm text-gray-600 italic">"We switched from Tally in under 5 minutes. The 1-Year Free Launch offer is a massive bonus for small businesses like ours."</p>
+          <div class="mt-4 pt-4 border-t border-gray-100">
+            <div class="font-bold text-sm text-maroon-950">Hiren Shah</div>
+            <div class="text-xs text-gray-500">Hardware & Industrial Tools, Rajkot</div>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+          <div class="flex text-gold-500 mb-2">★★★★★</div>
+          <p class="text-sm text-gray-600 italic">"GSTR-1 and 3B filing reconciles perfectly with bank statements. Saves our accounting team over 35 hours every single month."</p>
+          <div class="mt-4 pt-4 border-t border-gray-100">
+            <div class="font-bold text-sm text-maroon-950">CA Rajesh Mehta</div>
+            <div class="text-xs text-gray-500">Tax & Audit Practitioner, Ahmedabad</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 11. FAQ ACCORDION ================= -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-display font-extrabold text-maroon-950">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="space-y-4">
+        
+        <details class="group bg-gray-50 p-5 rounded-xl border border-gray-200">
+          <summary class="flex justify-between items-center font-bold text-gray-900 cursor-pointer list-none text-base">
+            <span>Is the 1-Year Free Launch access genuinely ₹0?</span>
+            <span class="text-maroon-900 group-open:rotate-180 transition">▼</span>
+          </summary>
+          <p class="mt-3 text-sm text-gray-600 leading-relaxed">
+            Yes, 100%. Businesses that register during this launch window receive our full Gold Enterprise suite for 365 days without paying a single rupee. No credit card is required.
+          </p>
+        </details>
+
+        <details class="group bg-gray-50 p-5 rounded-xl border border-gray-200">
+          <summary class="flex justify-between items-center font-bold text-gray-900 cursor-pointer list-none text-base">
+            <span>I have zero accounting knowledge. Can I still use Anke?</span>
+            <span class="text-maroon-900 group-open:rotate-180 transition">▼</span>
+          </summary>
+          <p class="mt-3 text-sm text-gray-600 leading-relaxed">
+            Absolutely. Anke is deliberately designed so that anyone who knows how to use a smartphone can create bills, record Rojmel payments, and check profit with one tap.
+          </p>
+        </details>
+
+        <details class="group bg-gray-50 p-5 rounded-xl border border-gray-200">
+          <summary class="flex justify-between items-center font-bold text-gray-900 cursor-pointer list-none text-base">
+            <span>Can I import my existing Tally or Excel data?</span>
+            <span class="text-maroon-900 group-open:rotate-180 transition">▼</span>
+          </summary>
+          <p class="mt-3 text-sm text-gray-600 leading-relaxed">
+            Yes. Anke provides a 1-click import wizard that brings all your existing customers, items, ledgers, and opening balances without manual re-entry.
+          </p>
+        </details>
+
+        <details class="group bg-gray-50 p-5 rounded-xl border border-gray-200">
+          <summary class="flex justify-between items-center font-bold text-gray-900 cursor-pointer list-none text-base">
+            <span>Can I use Anke on both my mobile and my shop computer?</span>
+            <span class="text-maroon-900 group-open:rotate-180 transition">▼</span>
+          </summary>
+          <p class="mt-3 text-sm text-gray-600 leading-relaxed">
+            Yes. Your data syncs in real-time. You can generate a bill on your phone while traveling, and your staff will see it immediately on the shop PC.
+          </p>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 12. CLEAN ENTERPRISE FOOTER (NO SOCIAL ICONS) ================= -->
+  <footer class="bg-maroon-950 text-white border-t-2 border-gold-500 pt-14 pb-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-maroon-800">
+        
+        <!-- Brand Info -->
+        <div class="space-y-4 md:col-span-2">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gold-500 text-maroon-950 font-display font-extrabold text-2xl flex items-center justify-center">
+              A
+            </div>
+            <span class="font-display font-extrabold text-2xl tracking-tight text-white">Anke</span>
+          </div>
+          <p class="text-gray-300 text-sm max-w-sm leading-relaxed">
+            Next-generation enterprise accounting and tax software for modern businesses. Combining Indian Desi Nama principles with world-class cloud automation.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="space-y-2 text-sm text-gray-300">
+          <div class="text-white font-bold text-base mb-3">Quick Navigation</div>
+          <div><a href="#features" class="hover:text-gold-400 transition">Capabilities</a></div>
+          <div><a href="#desi-nama" class="hover:text-gold-400 transition">Desi Nama & Rojmel</a></div>
+          <div><a href="#interactive-invoice" class="hover:text-gold-400 transition">Test Invoice Maker</a></div>
+          <div><a href="#pricing" class="hover:text-gold-400 transition">1-Year Free Access</a></div>
+        </div>
+
+        <!-- Direct Contact & Support -->
+        <div class="space-y-2 text-sm text-gray-300">
+          <div class="text-white font-bold text-base mb-3">Official Support</div>
+          <div class="flex items-center gap-2">
+            <span class="text-gold-400 font-bold">Helpline:</span>
+            <a href="tel:9104253142" class="text-white font-bold hover:underline">+91 9104253142</a>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-gold-400 font-bold">WhatsApp:</span>
+            <a href="https://wa.me/919104253142" target="_blank" class="text-emerald-400 font-semibold hover:underline">Chat 24/7</a>
+          </div>
+          <div class="text-xs text-gray-400 pt-2">
+            Enterprise Cloud Headquarters • Gujarat, India
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Legal (No Social Media) -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+        <div>
+          © 2026 Anke Accounting Technologies. All rights reserved.
+        </div>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-gray-200">Privacy Policy</a>
+          <a href="#" class="hover:text-gray-200">Terms of Service</a>
+          <a href="#" class="hover:text-gray-200">Security & GST Compliance</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= 13. REAL-TIME SALE PINGS (EVERY 1.5s - 2s) ================= -->
+  <div id="liveSalePing" class="fixed bottom-5 left-5 z-50 bg-white/95 backdrop-blur-md border-2 border-maroon-900/15 p-3.5 rounded-xl shadow-2xl flex items-center gap-3 transition-all duration-300 transform translate-y-32 opacity-0 max-w-xs sm:max-w-sm gold-border">
+    <div class="w-9 h-9 rounded-full maroon-gradient text-gold-400 font-bold flex items-center justify-center flex-shrink-0 text-base">
+      🧾
+    </div>
+    <div class="text-xs">
+      <div id="pingTitle" class="font-bold text-maroon-950">New GST Bill Generated</div>
+      <div id="pingDesc" class="text-gray-500 font-medium text-[11px]">Surat Textile Market • ₹18,400</div>
+    </div>
+  </div>
+
+  <!-- ================= 14. FLOATING WHATSAPP BUTTON ================= -->
+  <a href="https://wa.me/919104253142?text=Hi%20Anke%20team,%20please%20help%20me%20setup%20my%20free%20account." 
+     target="_blank" 
+     class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-200 border-2 border-white"
+     title="Chat with Anke on WhatsApp">
+    <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.155.57 4.175 1.564 5.923l-1.564 5.905 6.064-1.59c1.691.929 3.633 1.462 5.702 1.462 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
+  </a>
+
+  <!-- ================= INTERACTIVE SCRIPT LOGIC ================= -->
+  <script>
+    // 1. Confetti Celebration Trigger
+    function triggerConfetti() {
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 80,
+          spread: 60,
+          origin: { y: 0.65 },
+          colors: ['#5B0E2D', '#D4AF37', '#10B981', '#F59E0B']
+        });
+      }
+      alert("🎉 Congratulations! Your 1-Year Free Launch Pass has been activated. Connect via WhatsApp at +91 9104253142 for your instant login credentials.");
+    }
+
+    // 2. Headline Word Rotator
+    const words = ["Zero-Knowledge", "Desi-Nama Ready", "Lightning-Fast", "GST E-Invoicing", "Error-Free"];
+    let wordIdx = 0;
+    const wordElem = document.getElementById("wordRotator");
+    setInterval(() => {
+      wordIdx = (wordIdx + 1) % words.length;
+      wordElem.style.opacity = '0';
+      setTimeout(() => {
+        wordElem.textContent = words[wordIdx];
+        wordElem.style.opacity = '1';
+      }, 200);
+    }, 2400);
+
+    // 3. Live Stats Counter on Scroll
+    const counters = document.querySelectorAll('.counter');
+    let hasCounted = false;
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY + window.innerHeight;
+      const triggerPos = document.querySelector('.counter').offsetTop;
+      if (scrollPos > triggerPos && !hasCounted) {
+        counters.forEach(counter => {
+          const target = +counter.getAttribute('data-target');
+          let count = 0;
+          const inc = target / 40;
+          const timer = setInterval(() => {
+            count += inc;
+            if (count >= target) {
+              counter.innerText = target;
+              clearInterval(timer);
+            } else {
+              counter.innerText = Math.ceil(count);
+            }
+          }, 35);
+        });
+        hasCounted = true;
+      }
+    });
+
+    // 4. Live Interactive Invoice Tool
+    function calculateInvoice() {
+      const base = parseFloat(document.getElementById('invAmount').value) || 0;
+      const taxRate = parseFloat(document.getElementById('invTax').value) || 0;
+      const taxAmount = base * taxRate;
+      const total = base + taxAmount;
+      const halfTax = (taxAmount / 2).toFixed(2);
+
+      document.getElementById('invTotalDisplay').innerText = "₹" + total.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      document.getElementById('invTaxBreakdown').innerText = `CGST (${(taxRate*50)}%): ₹${halfTax} | SGST (${(taxRate*50)}%): ₹${halfTax}`;
+    }
+
+    function simulateSendInvoice() {
+      const alertBox = document.getElementById('invoiceSuccessAlert');
+      alertBox.classList.remove('hidden');
+      if (typeof confetti === 'function') {
+        confetti({ particleCount: 40, spread: 45 });
+      }
+      setTimeout(() => alertBox.classList.add('hidden'), 5000);
+    }
+
+    // 5. Interactive ROI Calculator
+    function calculateROI() {
+      const invoices = parseInt(document.getElementById('invoiceSlider').value);
+      const hours = parseInt(document.getElementById('hoursSlider').value);
+
+      document.getElementById('invoiceSliderVal').innerText = `${invoices} Bills`;
+      document.getElementById('hoursSliderVal').innerText = `${hours} Hours`;
+
+      const annualHours = Math.round(hours * 48 * 0.75);
+      const annualSavings = Math.round((annualHours * 120) + (invoices * 12));
+
+      document.getElementById('annualHoursSaved').innerText = `${annualHours} Hours`;
+      document.getElementById('annualMoneySaved').innerText = `₹${annualSavings.toLocaleString('en-IN')}`;
+    }
+
+    // 6. Fast Real-Time Live Pings (Every 1.5 to 2 Seconds)
+    const pings = [
+      { title: "New GST Bill Generated", desc: "Surat Textile Market • ₹18,400" },
+      { title: "Rojmel Cash Reconciled", desc: "Rajkot Hardware Mart • ₹42,100" },
+      { title: "GSTR-1 Return Submitted", desc: "Ahmedabad Pharma Corp • Verified" },
+      { title: "1-Year Free Access Claimed", desc: "Vadodara Logistics Hub • ₹0" },
+      { title: "WhatsApp Invoice Dispatched", desc: "Bhavnagar Brass Works • Paid via UPI" }
+    ];
+    let pingIndex = 0;
+    const pingEl = document.getElementById('liveSalePing');
+    const pTitle = document.getElementById('pingTitle');
+    const pDesc = document.getElementById('pingDesc');
+
+    setInterval(() => {
+      const data = pings[pingIndex];
+      pTitle.innerText = data.title;
+      pDesc.innerText = data.desc;
+
+      // Slide in
+      pingEl.classList.remove('translate-y-32', 'opacity-0');
+      
+      // Slide out after 1.4s
+      setTimeout(() => {
+        pingEl.classList.add('translate-y-32', 'opacity-0');
+      }, 1400);
+
+      pingIndex = (pingIndex + 1) % pings.length;
+    }, 2800);
+  </script>
+
+</body>
+</html>
